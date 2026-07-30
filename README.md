@@ -58,6 +58,7 @@ Metabase Dashboard
 | Containerization | Docker |
 | Visualization | Metabase |
 | Version Control | Git & GitHub |
+| Data Source | CoinGecko API |
 
 ## Project Structure
  
@@ -158,6 +159,15 @@ Actively collecting live data. Task history and pipeline runs can be checked via
 SELECT * FROM TABLE(CRYPTO_DB.INFORMATION_SCHEMA.TASK_HISTORY())
 ORDER BY SCHEDULED_TIME DESC;
 ```
+
+## Data Source
+
+This project uses cryptocurrency market data provided by the CoinGecko API.
+
+Source:
+- CoinGecko API: https://www.coingecko.com/en/api
+
+The data is used for educational and portfolio purposes.
 
 ## Future Improvements
 
