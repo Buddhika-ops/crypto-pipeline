@@ -1,0 +1,5 @@
+CREATE TABLE CRYPTO_DB.RAW.CRYPTO_PRICES_RAW(
+    coin_id = VARCHAR,
+    
+)
+
