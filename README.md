@@ -1,7 +1,11 @@
 # Crypto Data Pipeline
  
 A real-time crypto data pipeline: ingests live prices via Kafka, loads them into Snowflake through a medallion architecture (Raw → Silver → Gold), and visualizes the results in a Metabase dashboard.
- 
+
+ ## Diagram
+
+ <img width="1122" height="532" alt="crypto_prices drawio" src="https://github.com/user-attachments/assets/75b13699-e25a-45b1-ba8c-7e05746fc324" />
+
  ## Features
 
 - Live cryptocurrency price ingestion from the CoinGecko API
