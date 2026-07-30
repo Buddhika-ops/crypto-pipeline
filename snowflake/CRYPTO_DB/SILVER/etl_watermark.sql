@@ -1,0 +1,14 @@
+CREATE TABLE IF NOT EXISTS CRYPTO_DB.SILVER.ETL_WATERMARK
+(
+    pipeline_name varchar,
+    last_processed_at TIMESTAMP_NTZ
+);
+
+INSERT INTO CRYPTO_DB.SILVER.ETL_WATERMARK
+VALUES
+(
+    'crypto_prices',
+    '1970-01-01 00:00:00'
+);
+
+'1970-01-01 00:00:00'

@@ -2,17 +2,22 @@ import json
 import time
 import requests
 from kafka import KafkaProducer
+import os
+from dotenv import load_dotenv
 
-KAFCA_BROCKER = "localhost:9092"
-TOPIC = "crypto_prices"
+load_dotenv()
+
 COINS = ["bitcoin","ethereum","solana","dogecoin"]
-POLL_INTERVAL_SECONDS = 15
 
-COINGECKO_URL = "https://api.coingecko.com/api/v3/simple/price"
+
+KAFKA_BROKER = os.getenv("KAFKA_BROKER")
+TOPIC = os.getenv("KAFKA_TOPIC")
+POLL_INTERVAL_SECONDS = int(os.getenv("POLL_INTERVAL_SECONDS"))
+COINGECKO_URL = os.getenv("COINGECKO_URL")
 
 def create_producer():
     return KafkaProducer(
-        bootstrap_servers= [KAFCA_BROCKER],
+        bootstrap_servers= [KAFKA_BROKER],
         value_serializer= lambda v: json.dumps(v).encode("utf-8"),
     )
 

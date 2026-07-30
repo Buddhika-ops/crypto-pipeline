@@ -6,13 +6,13 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-TOPIC = "crypto_prices"
-KAFCA_BROCKER = "localhost:9092"
+TOPIC = os.getenv("KAFKA_TOPIC")
+KAFKA_BROKER = os.getenv("KAFKA_BROKER")
 
 def create_consumer():
     return KafkaConsumer(
         TOPIC,
-        bootstrap_servers=[KAFCA_BROCKER],
+        bootstrap_servers=[KAFKA_BROKER],
         value_deserializer= lambda x: json.loads(x.decode("utf-8")),
         auto_offset_reset='earliest',
         enable_auto_commit=True,
